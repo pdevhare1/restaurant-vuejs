@@ -1,11 +1,16 @@
 {
   "user": [
     {
-      "name": "Prathamesh",
+      "name": "prathamesh",
       "email": "test@test.com",
-      "password": "abc123",
-      "phone": "1234567890",
+      "password": "1234",
       "id": 1
+    },
+    {
+      "name": "prathamesh",
+      "email": "test@test.com",
+      "password": "123",
+      "id": 2
     }
   ]
 }
