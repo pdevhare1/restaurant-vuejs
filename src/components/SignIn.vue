@@ -4,18 +4,15 @@
     <h1>Sign Up</h1>
   </div>
   <div class="form">
-    <input type="text" placeholder="Enter Your Name" v-model="name" />
     <input type="email" placeholder="Enter Your Email" v-model="email" />
     <input
       type="password"
       placeholder="Enter your Password"
       v-model="password"
     />
-    <button class="btn" @click="signUp()">Sign up</button>
+    <button class="btn" @click="SingIn">Sign In</button>
     <div class="Sign_in">
-      <router-link class="Sign_in" to="/SignIn"
-        >Already have an account? Sign In</router-link
-      >
+      <router-link class="Sign_in" to="/SignUp"> Sign Up </router-link>
     </div>
   </div>
 </template>
@@ -23,24 +20,20 @@
 <script>
 import axios from "axios";
 export default {
-  name: "SignUp",
+  name: "SignIn",
   data() {
     return {
-      name: "",
       email: "",
       password: "",
     };
   },
   methods: {
-    async signUp() {
-      console.log("singUp", this.name, this.email, this.password);
-      let result = await axios.post("http://localhost:3000/user", {
-        name: this.name,
-        email: this.email,
-        password: this.password,
-      });
-      if (result.status === 201) {
-        localStorage.setItem("user-info", JSON.stringify(result.data));
+    async SingIn() {
+      let result = await axios.get(
+        `http://localhost:3000/user?email=${this.email}&password=${this.password}`
+      );
+      if (result.status === 200 && result.data.length > 0) {
+        localStorage.setItem("user-info", JSON.stringify(result.data[0]));
         this.$router.push({
           name: "Home",
         });

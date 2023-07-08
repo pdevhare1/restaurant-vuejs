@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <NavBar />
-    <h1>Hey Welcome Home</h1>
+    <h1>Hey Welcome Update Page</h1>
   </div>
 </template>
 
 <script>
 import NavBar from "./NavBar.vue";
 export default {
-  name: "HomePage",
+  name: "UpdatePage",
   components: {
     NavBar,
   },
