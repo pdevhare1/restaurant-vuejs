@@ -12,5 +12,13 @@
       "password": "123",
       "id": 2
     }
+  ],
+  "restaurant": [
+    {
+      "id": 1,
+      "name": "prathamesh",
+      "add": "nashik",
+      "contact": "1234567890"
+    }
   ]
 }
